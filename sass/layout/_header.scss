@@ -1,0 +1,48 @@
+
+.header {
+	height: 95vh;
+	/* background-image: linear-gradient(to right bottom,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.8)) ,url(../img/hero.jpg)  */;
+  background-image: linear-gradient(to right bottom,rgba($color-primary-light, 0.9),rgba($color-primary-dark, 0.9));
+
+	background-size: cover;
+	background-position: top;
+	position: relative;  /*so that we can use absolute positioning in its child elements */
+  -webkit-clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+	clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+
+  @include respond(phone){
+     -webkit-clip-path: polygon(0 0,100% 0,100% 85vh, 0 100%);
+  clip-path: polygon(0 0,100% 0,100% 85vh, 0 100%);
+
+  }
+
+  &__logo-box{    /* like .header__logo-box */
+    position: absolute;
+   top: 4rem;
+   left: 4rem;
+
+   @include respond(phone){
+      top: 3rem;
+      left: 3rem;
+    }
+
+    @include respond(small-phone){
+      top: 2.5rem;
+      left: 2.5rem;
+    }
+
+  }
+
+  &__logo {
+      height:5rem;
+    }
+
+  &__text-box{       /* contains two headings and a button*/
+      position:absolute;
+      top:40%;
+      left: 50%; /* 50% of the width of the parent element(which has its position set to 'relative' ) */
+      transform: translate(-50%,-50%);  /* wrt to this element(.text-box) */
+      text-align: center;
+      }
+
+} 

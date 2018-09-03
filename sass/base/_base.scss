@@ -1,0 +1,36 @@
+
+*,             /*initial reset*/
+*::after,
+*::before {
+	margin: 0px; /*by default browsers apply some padding and margin*/
+	padding: 0px;
+	box-sizing: inherit;
+}
+
+html{   /*by specifying root font-size here in px, our user will not be able to change the default fony-size from the browser*/
+	font-size: 62.5%;  /* Now 1 rem = .625*16 = 10px , now to convert all the px to rem we just need to divide all the px by 10*/
+	 /*This defines what 1 rem is*/
+
+
+	  @include respond(tab-land){
+	 	font-size: 56.25%;  /* 1rem = 9px */  
+	 }
+
+	   @include respond(tab-port){
+	 	font-size: 50%;  /* 1rem = 8px */
+	 }
+
+	  @include respond(big-desktop){
+	 	font-size: 75%;  /* 1rem = 12px */
+	 }
+}
+
+body {   /*all the typography stuffs of body element are in _typography.scss*/
+	box-sizing: border-box;
+      padding: .5rem;
+
+         @include respond(tab-port){
+	 	   padding: .1;
+	 }
+
+}
